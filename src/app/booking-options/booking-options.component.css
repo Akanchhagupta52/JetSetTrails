@@ -1,0 +1,70 @@
+/* Section Padding */
+.popular-tours {
+  background-color: #f9f9f9;
+}
+
+/* Tour Card Styles */
+.tour-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Hover effect for the card */
+.tour-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Wrapper */
+.tour-image-wrapper {
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Image Styling */
+.tour-image-wrapper img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Image hover effect */
+.tour-image-wrapper img:hover {
+  transform: scale(1.05);
+}
+
+/* Card Body Padding */
+.card-body {
+  padding: 15px;
+}
+
+/* Tour Title */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+/* Tour Price Styling */
+.card-text {
+  font-size: 0.875rem;
+}
+
+/* Book Now Button Styling */
+.btn-outline-danger {
+  font-size: 0.875rem;
+  border-radius: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .tour-card {
+    margin-bottom: 30px;
+  }
+}
+
+  

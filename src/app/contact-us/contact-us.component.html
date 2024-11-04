@@ -1,0 +1,145 @@
+<!-- <p>contact-us works!</p>
+<div class="contact-hero">
+    <div class="container text-center">
+      <h1 class="display-4">Contact JetSetTrails</h1>
+      <p class="lead">While we’re good with smoke signals, there are simpler ways for us to get in touch and answer your questions.</p>
+    </div>
+  </div>
+  
+  <div class="container my-5">
+    <div class="row text-center mb-4">
+      <div class="col-md-2">
+        <a href="#" class="contact-icon">
+          <i class="fas fa-info-circle fa-3x"></i>
+          <h5 class="mt-2">Product FAQs</h5>
+        </a>
+      </div>
+      <div class="col-md-2">
+        <a href="#" class="contact-icon">
+          <i class="fas fa-truck fa-3x"></i>
+          <h5 class="mt-2">Shipping & Returns</h5>
+        </a>
+      </div>
+      <div class="col-md-2">
+        <a href="#" class="contact-icon">
+          <i class="fas fa-clipboard-check fa-3x"></i>
+          <h5 class="mt-2">Warranty</h5>
+        </a>
+      </div>
+      <div class="col-md-2">
+        <a href="#" class="contact-icon">
+          <i class="fas fa-registered fa-3x"></i>
+          <h5 class="mt-2">Product Registration</h5>
+        </a>
+      </div>
+      <div class="col-md-2">
+        <a href="#" class="contact-icon">
+          <i class="fas fa-envelope-open-text fa-3x"></i>
+          <h5 class="mt-2">Privacy Inquiry</h5>
+        </a>
+      </div>
+      <div class="col-md-2">
+        <a href="#" class="contact-icon">
+          <i class="fas fa-briefcase fa-3x"></i>
+          <h5 class="mt-2">Corporate Quote</h5>
+        </a>
+      </div>
+    </div>
+  
+    <!-- Customer Service and Corporate Details 
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Customer Service Team</h5>
+        <p>For general inquiries, product questions, or warranties:</p>
+        <ul class="list-unstyled">
+          <li>Phone: 1-800-555-1234</li>
+          <li>Monday – Friday: 7AM – 8PM CT</li>
+          <li>Saturday – Sunday: 9AM – 6PM CT</li>
+        </ul>
+      </div>
+  
+      <div class="col-md-4">
+        <h5>Corporate Office</h5>
+        <p>7601 Southwest Parkway, Austin, TX 78735</p>
+        <p>Phone: 1-800-555-5678</p>
+      </div>
+  
+      <div class="col-md-4">
+        <h5>Corporate Sales Team</h5>
+        <p>For business-to-business sales:</p>
+        <ul class="list-unstyled">
+          <li>Phone: 1-800-555-7890</li>
+          <li>Monday – Friday: 7AM – 7PM CT</li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+  
+-->
+
+<!--Template form ([(ngModel)])-->
+<section class="contact-us py-8 pt-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4 mt-4">Contact Us</h2>
+        <p mb-4>
+          Whether you're planning your next adventure, have questions about our services, or need assistance with your TravelBuddy account, we're here to help! Our team is always ready to support you with any inquiries or feedback you may have.
+        </p>
+        <ul class="list-unstyled">
+          <li><strong>Email: </strong> <a href="mailto:support&#64;travelbuddy.com">support&#64;travelbuddy.com</a></li>
+          <li><strong>Phone: </strong> +1 (800) 123-4567</li>
+          <li><strong>Address: </strong> 123 Explorer Avenue, Adventure City, USA</li>
+        </ul>
+        <p>
+          Let's make your travel experiences effortless and enjoyable! Feel free to get in touch with us anytime.
+        </p>
+      </div>
+      
+      <div class="form col-md-6">
+        <h3 class="text-center mb-4" style="color: white;">Get in Touch</h3>
+        <form novalidate (ngSubmit)="save(contactForm)" #contactForm="ngForm">
+          <div class="form-group row mb-3">
+            <label for="name" class="col-md-2 col-form-label" style="color: rgb(17, 16, 16);">Full Name</label>
+            <div class="col-md-8">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="contact.name" #nameVar="ngModel" required minlength="4"
+                     [ngClass]="{'is-invalid': (nameVar.touched || nameVar.dirty) && !nameVar.valid}">
+              <span class="invalid-feedback">
+                <span *ngIf="nameVar.errors?.['required']">Please enter your full name.</span>
+                <span *ngIf="nameVar.errors?.['minlength']">The name must be at least 4 characters.</span>
+              </span>
+            </div>
+          </div>
+        
+          <div class="form-group row mb-3">
+            <label for="email" class="col-md-2 col-form-label" style="color: rgb(26, 25, 25);">Email Address</label>
+            <div class="col-md-8">
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="contact.email" #emailVar="ngModel" required
+                     [ngClass]="{'is-invalid': (emailVar.touched || emailVar.dirty) && !emailVar.valid}">
+              <span class="invalid-feedback">
+                <span *ngIf="emailVar.errors?.['required']">Please enter your email.</span>
+                <span *ngIf="emailVar.errors?.['email']">Enter a valid email address.</span>
+              </span>
+            </div>
+          </div>
+        
+          <div class="form-group row mb-3">
+            <label for="message" class="col-md-2 col-form-label" style="color: rgb(26, 25, 25);">Message</label>
+            <div class="col-md-8">
+              <textarea class="form-control" id="message" rows="4" name="message" [(ngModel)]="contact.message" #messageVar="ngModel" required
+                        [ngClass]="{'is-invalid': (messageVar.touched || messageVar.dirty) && !messageVar.valid}"></textarea>
+              <span class="invalid-feedback">
+                <span *ngIf="messageVar.errors?.['required']">Please enter your message.</span>
+              </span>
+            </div>
+          </div>
+        
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" [title]="contactForm.valid ? 'Send Message' : 'Fill all fields correctly'" 
+                    [disabled]="!contactForm.valid" style="color: rgb(246, 242, 242);">Send Message</button>
+          </div>
+        </form>        
+      </div>
+    </div>
+  </div>
+</section>

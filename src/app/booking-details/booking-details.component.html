@@ -1,0 +1,12 @@
+<p>booking-details works!</p>
+<h4>This is the booking id {{ booking.tourID }}</h4>
+<h4>This is the booking id price {{ booking.price}}</h4>
+<h4>Tourname is: {{ booking.tourName }}</h4>
+<button class="btn btn-info" (click)="onBack()"> Go Back</button>"
+<button class="btn btn-outline-info"  
+    style="width: 80px;margin-left: 10px;" (click)="onEdit()">
+        Edit
+    </button>
+    <button class="btn btn-outline-danger" (click)="onDelete()" style="width: 85px;margin-left: 10px">
+        Delete
+    </button>

@@ -1,0 +1,50 @@
+<section class="popular-tours py-5">
+  <div class="container">
+    <!-- Section Title and View All Link -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="mb-0">Popular Tours</h2>
+      <div class="input-group" style="width: 300px;">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search tours"
+          [(ngModel)]="searchTerm"
+          aria-label="Search tours">
+       
+      </div>
+    </div>
+
+    <!-- Tour Cards Row -->
+    <div class="row">
+      <!Loop through the tours array -->
+      <div class="col-md-4 mb-4" *ngFor="let booking of filteredBookings">
+        <div class="card tour-card shadow-sm border-0">
+          <!-- Background image for the card -->
+          <div class="tour-image-wrapper">
+            <img [src]="booking.image" alt="{{ booking.tourName }}" class="card-img-top">
+          </div>
+
+          <!-- Card Body with Tour Info -->
+          <div class="card-body p-3">
+            <!-- Tour Name -->
+            <h5 class="card-title">{{ booking.tourName }}</h5>
+
+            <!-- Tour Duration and Price -->
+            <p class="card-text text-muted mb-1">
+              <i class="bi bi-clock me-2"></i> {{ booking.duration }}
+            </p>
+            <p class="card-text text-danger fw-bold">
+              {{ booking.price | currency:'INR'}}
+            </p>
+            <app-booking-rating [rating]="booking.rating" (ratingClicked)="onRatingClicked($event)"></app-booking-rating>
+            <!-- Book Now Button -->
+            <button class="btn btn-outline-danger btn-sm"  [routerLink]="['/booking-details',booking.tourID]">Book Now</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  

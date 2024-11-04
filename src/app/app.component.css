@@ -1,0 +1,15 @@
+.hero-section {
+    background-image: url('/assets/pexels-dreamlensproduction-2450296.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 72vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: red;
+    padding: 0 20px;
+    }
+ 

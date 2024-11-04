@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <!-- Logo (JetSetTrails) -->
+    <a class="navbar-brand" href="#">JetSetTrails</a>
+
+    <!-- Navbar toggler for mobile view -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- This pushes the nav items to the right -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+        <!-- Home link -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+
+        <!-- Booking link -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/booking" routerLinkActive="active">Booking</a>
+        </li>
+
+        <!-- Contact Us link -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact Us</a>
+        </li>
+
+        <!-- About Us link -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Router outlet to load components -->
+<router-outlet></router-outlet>
+
+
